@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+        
+        
+<!--     different types of bean configuration[primitive, non primitive] -->
+        
+
+    <bean id="e1" class="com.bs.Employee">
+      <property name="eno" value="101"/>
+      <property name="name" value="abc"/>
+      <property name="address" ref="adr1"/>
+      
+      <property name="addresses">
+      <map>
+      <entry key="temprory" value-ref="adr1"/>
+      <entry key="parmanent" value-ref="adr2"/>
+      </map>
+      </property>
+      
+      
+      <property name="emails">
+      <set>
+      <value>baljeet@gmail.com</value>
+      <value>ram@gmail.com</value>
+      <value>sita@gmail.com</value>
+      <value>baljeet@gmail.com</value>
+      </set>
+      
+      
+<!--       <list> -->
+<!--       <value>baljeet@gmail.com</value> -->
+<!--       <value>ram@gmail.com</value> -->
+<!--       <value>sita@gmail.com</value> -->
+<!--       <value>baljeet@gmail.com</value> -->
+<!--       </list> -->
+      </property>
+      
+      <property name="kids">
+      <map>
+      <entry key="kid-1" value="8"/>
+      <entry key="kid-2" value="12"/>
+      <entry key="kid-3" value="15"/>
+      </map>
+      </property>
+      
+      <property name="education">
+      <props>
+      <prop key="b.tech">rgpv</prop>
+      <prop key="m.tech">iit</prop>
+      <prop key="phd">iist</prop>
+      </props>
+      </property>
+      
+      
+      <property name="projects">
+      <list>
+      <ref bean="prj1"/>
+      <ref bean="prj2"/>
+      </list>
+      </property>
+       
+    </bean>
+    
+    <bean id="prj1" class="com.bs.Project">
+    <property name="code" value="101"/>
+    <property name="name" value="banking-application"/>
+    </bean>
+    
+    <bean id="prj2" class="com.bs.Project">
+    <property name="code" value="102"/>
+    <property name="name" value="insurance-appliction"/>
+    </bean>
+    
+    
+      <bean id="adr1" class="com.bs.Address">
+      <property name="hno" value="1155" />
+      <property name="street" value="mg-road"/>
+      <property name="city" value="harda"/>
+      
+      </bean>
+      
+      
+      <bean id="adr2" class="com.bs.Address">
+      <property name="hno" value="103"/>
+      <property name="street" value="YN-road"/>
+      <property name="city" value="inodre"/>
+      </bean>
+     
+</beans>

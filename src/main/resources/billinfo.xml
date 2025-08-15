@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+       
+<!--        <bean id="bill"  class="com.bs.Bill" init-method="compute" > -->
+      <bean id="bill"  class="com.bs.Bill" >  <!--  use java interface for automaic execution -->
+
+       <property name="price" value="500"/>
+       <property name="quantity" value="4"/>
+       
+       </bean>
+<!--         <bean id="ba" factory-bean="bill" factory-method="compute"/> -->
+        
+       </beans>

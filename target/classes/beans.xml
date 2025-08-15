@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+       
+<!--        <bean id="info" class="com.bs.CountryInfo" factory-method="getCountryInfo"/> -->
+<!--      <bean id="info" class="com.bs.CountryInfoBuilder" factory-method="getCountryInfo"/> -->
+
+
+<!-- non static factory method with other class -->
+       <bean id="cib" class="com.bs.CountryInfoBuilder"/>
+       <bean id="info" factory-bean="cib" factory-method="getCountryInfo"/>
+       </beans>
