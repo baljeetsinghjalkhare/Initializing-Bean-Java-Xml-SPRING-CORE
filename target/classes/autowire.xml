@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        https://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!-- Enable annotation-based configuration -->
+    
+    <context:annotation-config/>
+    
+    <context:component-scan base-package="com.bs"/>
+     
+<!--      <bean id="mycountry" class="com.bs.MyCountry" /> -->
+
+    <bean id="auto" class="com.bs.Autowire">
+        <property name="rno" value="105"/>
+        <property name="name" value="xyz"/>
+    </bean>
+
+    <bean id="projects" class="com.bs.Project">
+        <property name="code" value="101"/>
+        <property name="name" value="banking-application"/>
+    </bean>
+
+    <bean id="prj2" class="com.bs.Project">
+        <property name="code" value="102"/>
+        <property name="name" value="insurance-application"/>
+    </bean>
+
+    <bean id="addresses" class="com.bs.Address">
+        <property name="hno" value="1155"/>
+        <property name="street" value="mg-road"/>
+        <property name="city" value="harda"/>
+    </bean>
+
+    <bean id="adr2" class="com.bs.Address">
+        <property name="hno" value="103"/>
+        <property name="street" value="YN-road"/>
+        <property name="city" value="indore"/>
+    </bean>
+
+</beans>

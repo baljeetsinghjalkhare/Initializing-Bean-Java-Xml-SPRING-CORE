@@ -12,7 +12,7 @@ import lombok.Data;
 import lombok.ToString; 
 
 @Data
-@ToString(exclude = {"address","Name","address","emails","kids"})
+@ToString(exclude = {"kids","education","projects","addresses"})
 public class Employee {
 private int Eno;
 private String Name;
@@ -21,12 +21,41 @@ private String Name;
 private Address address;
 private Set<String> emails;//duplicate not allowed
 //private List<String> emails;
-
+private List<String> hobbies;
 private Map<String,Integer> kids;
 private Properties education;
 
 private List<Project> projects;
 private Map<String,Address> addresses;
+
+public Employee(int eno, String name, Address address) {
+
+	System.out.println("three Args Constructor");
+	Eno = eno;
+	Name = name;
+	this.address = address;
+}
+
+public Employee()
+{
+	System.out.println("Zero Args Constructor");
+}
+
+public Employee(int eno, String name, Address address, Set<String> emails) {
+	System.out.println("Four Args Constructor (Set type).......");
+	Eno = eno;
+	Name = name;
+	this.address = address;
+	this.emails = emails;
+}
+
+public Employee(int eno, String name, Address address, List<String> hobbies) {
+    System.out.println("four args constructor (list type)......");
+	Eno = eno;
+	Name = name;
+	this.address = address;
+	this.hobbies = hobbies;
+}
 
 
 }

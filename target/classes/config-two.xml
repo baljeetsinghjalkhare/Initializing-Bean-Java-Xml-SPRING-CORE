@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+        
+        
+<!--     different types of bean configuration[primitive, non primitive] -->
+      
+      
+      <bean id="e1" class="com.bs.Employee">
+      <constructor-arg value="101"/>
+      <constructor-arg value="xyz"/>
+      <constructor-arg ref="adr1"/>
+      <constructor-arg type="java.util.List">
+      <list>
+      <value>cricket</value>
+      <value>hockey</value>
+      <value>kho-kho</value>
+      <value>kabaddi</value>
+     </list>
+      </constructor-arg>
+      
+      
+<!--       <constructor-arg> -->
+<!--       <set> -->
+<!--       <value>ab@gmail.com</value> -->
+<!--       <value>cd@gmail.com</value> -->
+<!--       <value>ef@gmail.com</value> -->
+<!--       <value>gh@gmail.com</value> -->
+<!--       </set> -->
+<!--       </constructor-arg> -->
+
+
+<!--           <property name="emails"> -->
+<!--           <set> -->
+<!--               <value>ab@gmail.com</value> -->
+<!--               <value>cd@gmail.com</value> -->
+<!--               <value>ef@gmail.com</value> -->
+<!--               <value>gh@gmail.com</value> -->
+<!--            </set> -->
+<!--        </property> -->
+
+
+      </bean>
+      
+      
+      <bean id="adr1" class="com.bs.Address">
+      <property name="hno" value="1155" />
+      <property name="street" value="mg-road"/>
+      <property name="city" value="harda"/>
+      
+      </bean>
+      
+      
+      <bean id="adr2" class="com.bs.Address">
+      <property name="hno" value="103"/>
+      <property name="street" value="YN-road"/>
+      <property name="city" value="inodre"/>
+      </bean>
+     
+</beans>
